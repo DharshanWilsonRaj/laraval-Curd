@@ -1,5 +1,6 @@
 
-![laravalCurd](https://github.com/DharshanWilsonRaj/laraval-Curd/assets/149076786/2ab65975-a5cc-4028-8405-7a42d5bbadb5)
+![laravalCurdWithAuthentication](https://github.com/DharshanWilsonRaj/laraval-Curd/assets/149076786/05eb02a0-277a-44e0-b519-1555295cc74e)
+
 ![Screenshot from 2023-12-20 17-32-13](https://github.com/DharshanWilsonRaj/laraval-Curd/assets/149076786/942baf79-1392-4cd4-8b24-d786fce5d628)
 
 
