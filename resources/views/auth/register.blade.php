@@ -22,7 +22,7 @@
                     class="p-1 focus:outline-none focus:ring focus:border-blue-500  border border-slate-400 rounded"
                     value="{{ old('name') }}" required>
             </div>
-            
+
             <div class="my-2 flex flex-col">
                 <label for="email">Email:</label>
                 <input type="email" name="email"
@@ -38,6 +38,8 @@
             </div>
             <button type="submit"
                 class="bg-indigo-500 text-white py-1 mt-2 rounded font-bold hover:bg-indigo-600">Register</button>
+            <a href="{{ route('login') }}" class="text-indigo-500 mt-1 text-sm text-end w-full">click here already have
+                account?</a>
         </form>
     </div>
 

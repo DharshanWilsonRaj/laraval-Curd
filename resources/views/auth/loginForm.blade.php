@@ -24,7 +24,7 @@
         </div>
     @endif
 
-    <div class="flex justify-center flex-col w-1/2 mx-auto items-center mt-8">
+    <div class="flex  flex-col w-1/2 mx-auto items-center mt-8">
         <h6 class="text-xl font-bold">Login</h6>
         <form method="POST" class="flex flex-col" action="{{ url('/login') }}">
             @csrf
@@ -44,6 +44,7 @@
             </div>
             <button type="submit"
                 class="bg-indigo-500 text-white py-1 mt-2 rounded font-bold hover:bg-indigo-600">Login</button>
+                <a href="{{ route('register') }}" class="text-indigo-500 mt-1 text-sm text-end w-full">Create an new account</a>
         </form>
     </div>
 
