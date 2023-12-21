@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\usersDataController;
 use Illuminate\Support\Facades\Route;
@@ -16,10 +17,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+
 // users create / update/ delete
-Route::get('/', [usersDataController::class, 'index'])->name('usersIndex');
-Route::get('/create', [usersDataController::class, 'create'])->name('usersCreate');
-Route::post('/store', [usersDataController::class, 'store'])->name('usersStore');
-Route::get('/edit/{id}', [usersDataController::class, 'edit'])->name('userEdit');
-Route::post('/update/{id}', [usersDataController::class, 'update'])->name('usersUpdate');
-Route::get('/deleteUser/{id}', [usersDataController::class, 'destroy'])->name('deleteUser');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', [usersDataController::class, 'index'])->name('usersIndex');
+    Route::get('/create', [usersDataController::class, 'create'])->name('usersCreate');
+    Route::post('/store', [usersDataController::class, 'store'])->name('usersStore');
+    Route::get('/edit/{id}', [usersDataController::class, 'edit'])->name('userEdit');
+    Route::post('/update/{id}', [usersDataController::class, 'update'])->name('usersUpdate');
+    Route::get('/deleteUser/{id}', [usersDataController::class, 'destroy'])->name('deleteUser');
+});

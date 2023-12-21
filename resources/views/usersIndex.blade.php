@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+
     <h6 class="text-2xl mt-1 mx-2 font-bold"> Laravel Crud </h6>
     <table class="table-fixed w-full mt-5 ">
         <thead>
