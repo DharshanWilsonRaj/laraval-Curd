@@ -44,11 +44,31 @@
             </div>
             <button type="submit"
                 class="bg-indigo-500 text-white py-1 mt-2 rounded font-bold hover:bg-indigo-600">Login</button>
-                <a href="{{ route('register') }}" class="text-indigo-500 mt-1 text-sm text-end w-full">Create an new account</a>
+            <a href="{{ route('register') }}" class="text-indigo-500 mt-1 text-sm text-end w-full">Create an new
+                account</a>
         </form>
+
+
+        <div id="user-list"></div>
     </div>
 
+    {{-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Call the API when the page is loaded
+            fetch('/api/usersIndex')
+                .then(response => response.json())
+                .then(data => {
+                    let userList = document.getElementById('user-list');
+                    userList.innerHTML = renderUserList(data.data.data);
+                })
+                .catch(error => console.error('Error:', error));
+        });
 
+        // Function to render the user list
+        function renderUserList(users) {
+            return `<ul>${users.map(user => `<li>${user.name} - ${user.email}</li>`).join('')}</ul>`;
+        }
+    </script> --}}
 </body>
 
 </html>

@@ -8,10 +8,23 @@
     <title>Register</title>
     @vite('resources/css/app.css')
 </head>
+<script>
+    const handleclear = () => {
+        let ele = document.getElementById('danger_block');
+        ele.remove();
+    }
+</script>
 
 <body>
 
     <div class="flex justify-center flex-col w-1/2 mx-auto items-center mt-8">
+        @if ($errors->has('error'))
+            <div class="bg-red-500 w-1/2 mx-auto my-5 rounded p-2 px-3 text-white flex justify-between" id="danger_block">
+                {{ $errors->first('error') }}
+                <span class="cursor-pointer text-xl" onclick="handleclear()">x</span>
+            </div>
+        @endif
+
         <h6 class="text-xl font-bold">Register</h6>
         <form method="POST" class="flex flex-col" action="{{ url('/register') }}">
             @csrf

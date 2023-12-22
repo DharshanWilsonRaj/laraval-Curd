@@ -21,8 +21,8 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('/confirm-registration/{token}',[AuthController::class,'confrimRegistration'])->name('confirm_registration');
 
 // users create / update/ delete
 Route::middleware(['auth'])->group(function () {
@@ -32,4 +32,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/edit/{id}', [usersDataController::class, 'edit'])->name('userEdit');
     Route::post('/update/{id}', [usersDataController::class, 'update'])->name('usersUpdate');
     Route::get('/deleteUser/{id}', [usersDataController::class, 'destroy'])->name('deleteUser');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
